@@ -127,7 +127,12 @@ public final class Veletlen {
 
     public static String velEmail(String nev){
         String email;
-        nev = Normalizer.normalize(nev, Normalizer.Form.NFKD);
+
         return email;
+    }
+
+    public static String removeAccent(String s){
+        s = Normalizer.normalize(s, Normalizer.Form.NFKD);
+        return s;
     }
 }
