@@ -78,64 +78,81 @@ public final class Veletlen {
         return velVezetekNev() + " " + velKeresztNev(nem);
     }
 
-    public static String velDatum(int ev1, int ev2){
+    public static String velDatum(int ev1, int ev2) {
         int year = velEv(ev1, ev2);
         int month = velHonap();
         int day = velNap(year, month);
         return year + "-" + month + "-" + day;
     }
 
-    private static int velEv(int min, int max){
+    private static int velEv(int min, int max) {
         return velEgesz(min, max);
     }
 
-    private static int velHonap(){
+    private static int velHonap() {
         return velEgesz(1, 12);
     }
 
-    private static int velNap(int year, int month){
+    private static int velNap(int year, int month) {
         int day;
-            switch (month){
-                case 1:
-                case 3:
-                case 5:
-                case 7:
-                case 8:
-                case 10:
-                case 12:
-                    day = velEgesz(1, 31);
-                    break;
-                case 2:
-                    if (isLeap(year)){
-                        day = velEgesz(1, 29);
-                    }else {
-                        day = velEgesz(1, 28);
-                    }
-                    break;
-                case 4:
-                case 6:
-                case 9:
-                case 11:
+        switch (month) {
+            case 1:
+            case 3:
+            case 5:
+            case 7:
+            case 8:
+            case 10:
+            case 12:
+                day = velEgesz(1, 31);
+                break;
+            case 2:
+                if (isLeap(year)) {
+                    day = velEgesz(1, 29);
+                } else {
+                    day = velEgesz(1, 28);
+                }
+                break;
+            case 4:
+            case 6:
+            case 9:
+            case 11:
 
-                    day = velEgesz(1, 30);
-                    break;
-                default:
-                    throw new RuntimeException("Nem egy valós hónap lett megadva!");
-            }
+                day = velEgesz(1, 30);
+                break;
+            default:
+                throw new RuntimeException("Nem egy valós hónap lett megadva!");
+        }
         return day;
     }
 
-    public static String velEmail(String nev){
+    public static String velEmail(String nev) {
         String email;
         email = removeAccent(normalize(nev)).replaceAll("\\s+", "") + velEgesz(1, 100) + "@gmail.com";
         return email;
     }
 
-    public static String normalize(String s){
+    public static String normalize(String s) {
         return s == null ? null : Normalizer.normalize(s, Normalizer.Form.NFKD);
     }
 
-    public static String removeAccent(String s){
+    public static String removeAccent(String s) {
         return normalize(s).replaceAll("\\p{M}", "").toLowerCase();
+    }
+
+
+    public static String velMobil() {
+        int szolgaltato;
+        int random = velEgesz(0, 3);
+        if (random == 0) {
+            szolgaltato = 20;
+        } else if (random == 1) {
+            szolgaltato = 30;
+        } else if (random == 2) {
+            szolgaltato = 31;
+        } else {
+            szolgaltato = 70;
+        }
+        return String.format("+36 (%d) %d%d%d-%d%d-%d%d",
+                szolgaltato, velEgesz(0, 9), velEgesz(0, 9), velEgesz(0, 9), velEgesz(0, 9), velEgesz(0, 9), velEgesz(0, 9), velEgesz(0, 9));
     }
 }
