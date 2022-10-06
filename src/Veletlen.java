@@ -127,12 +127,15 @@ public final class Veletlen {
 
     public static String velEmail(String nev){
         String email;
-
+        email = removeAccent(normalize(nev)).replaceAll("\\s+", "") + velEgesz(1, 100) + "@gmail.com";
         return email;
     }
 
+    public static String normalize(String s){
+        return s == null ? null : Normalizer.normalize(s, Normalizer.Form.NFKD);
+    }
+
     public static String removeAccent(String s){
-        s = Normalizer.normalize(s, Normalizer.Form.NFKD);
-        return s;
+        return normalize(s).replaceAll("\\p{M}", "").toLowerCase();
     }
 }

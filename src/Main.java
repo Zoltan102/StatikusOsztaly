@@ -15,5 +15,9 @@ public class Main {
         for (int i = 0; i < 100; i++) {
             System.out.println(Veletlen.velDatum(2021, 2021)) ;
         }
+        for (int i = 0; i < 100; i++) {
+            Random rnd = new Random();
+            System.out.println(Veletlen.velEmail(Veletlen.velTeljesNev(rnd.nextBoolean()))) ;
+        }
     }
 }
