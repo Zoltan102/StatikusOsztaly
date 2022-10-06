@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8461548a-56f9-40c6-abd5-3b889327eac7" name="Changes" comment="random email">
+    <list default="true" id="8461548a-56f9-40c6-abd5-3b889327eac7" name="Changes" comment="random mobil">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Veletlen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Veletlen.java" afterDir="false" />
@@ -70,7 +70,7 @@
       <workItem from="1665036404429" duration="6969000" />
       <workItem from="1665043515032" duration="137000" />
       <workItem from="1665043668297" duration="2000" />
-      <workItem from="1665045488433" duration="1773000" />
+      <workItem from="1665045488433" duration="2646000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1665036430401</created>
@@ -100,7 +100,14 @@
       <option name="project" value="LOCAL" />
       <updated>1665046445516</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="random mobil">
+      <created>1665047287354</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1665047287354</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -121,6 +128,7 @@
     <MESSAGE value="init" />
     <MESSAGE value="eddig jutottam" />
     <MESSAGE value="random email" />
-    <option name="LAST_COMMIT_MESSAGE" value="random email" />
+    <MESSAGE value="random mobil" />
+    <option name="LAST_COMMIT_MESSAGE" value="random mobil" />
   </component>
 </project>

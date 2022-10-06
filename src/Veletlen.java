@@ -1,10 +1,7 @@
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.text.Normalizer;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Random;
-import java.util.Scanner;
+import java.util.*;
 
 import static java.time.Year.isLeap;
 
@@ -154,5 +151,37 @@ public final class Veletlen {
         }
         return String.format("+36 (%d) %d%d%d-%d%d-%d%d",
                 szolgaltato, velEgesz(0, 9), velEgesz(0, 9), velEgesz(0, 9), velEgesz(0, 9), velEgesz(0, 9), velEgesz(0, 9), velEgesz(0, 9));
+    }
+
+    public static String velSportag() {
+        String sportag;
+        try {
+            Scanner sc = new Scanner(new File("files/sportag.txt"));
+            List<String> tmp = new ArrayList<>();
+            while (sc.hasNextLine()) {
+                tmp.add(sc.nextLine());
+            }
+            sportag = tmp.get(velEgesz(0, tmp.size() - 1));
+            sc.close();
+        } catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+        return sportag;
+    }
+
+    public static String velSportegyesulet() {
+        String sportag;
+        try {
+            Scanner sc = new Scanner(new File("files/egyesulet.txt"));
+            List<String> tmp = new ArrayList<>();
+            while (sc.hasNextLine()) {
+                tmp.add(sc.nextLine());
+            }
+            sportag = tmp.get(velEgesz(0, tmp.size() - 1));
+            sc.close();
+        } catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+        return sportag + " " + velSportag();
     }
 }

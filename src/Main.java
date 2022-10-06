@@ -1,3 +1,4 @@
+import java.sql.SQLOutput;
 import java.util.Random;
 
 public class Main {
@@ -19,9 +20,13 @@ public class Main {
             Random rnd = new Random();
             System.out.println(Veletlen.velEmail(Veletlen.velTeljesNev(rnd.nextBoolean())));
         }
-        for (int i = 0; i < 100; i++) {
+        for (int i = 0; i < 10; i++) {
             Random rnd = new Random();
             System.out.println(Veletlen.velMobil());
+        }
+
+        for (int i = 0; i < 10; i++) {
+            System.out.println(Veletlen.velSportegyesulet());
         }
     }
 }
